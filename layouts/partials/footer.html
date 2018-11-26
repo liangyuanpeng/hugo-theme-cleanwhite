@@ -24,7 +24,7 @@
                         </a>
                     </li>
 		    {{ end }}
-                    
+
                     {{ with .Site.Params.social.twitter }}
                     <li>
                         <a href="{{ . }}">
@@ -128,14 +128,14 @@
     }
 </script>
 
-<!-- 
-     Because of the native support for backtick-style fenced code blocks 
-     right within the Markdown is landed in Github Pages, 
-     From V1.6, There is no need for Highlight.js, 
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
      so Huxblog drops it officially.
 
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
 -->
 <!--
     <script>
@@ -169,7 +169,7 @@
     })
 </script>
 
-<!-- push page to Baidu -->
+<!-- push page to Baidu
 <script>
     (function(){
         var bp = document.createElement('script');
@@ -184,10 +184,12 @@
         s.parentNode.insertBefore(bp, s);
     })();
 </script>
+-->
 
 
 <!-- Baidu Tongji -->
 {{ if .Site.Params.ba_track_id }}
+<!--
 <script>
     // dynamic User by Hux
     var _baId = '{{ .Site.Params.ba_track_id }}';
@@ -201,6 +203,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
 </script>
+-->
+
+
 {{ end }}
 
 {{ if .Site.GoogleAnalytics }}
