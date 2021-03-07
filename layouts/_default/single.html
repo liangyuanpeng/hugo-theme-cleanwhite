@@ -74,6 +74,10 @@
             {{ partial "comments.html" . }}
 
             </div>
+
+            
+
+
             <!-- Sidebar Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
@@ -96,7 +100,12 @@
                     </div>
                 </section>
 
+
+
+               
+
                 <!-- Friends Blog -->
+                <!--
                 <hr>
                 <h5>FRIENDS</h5>
                 <ul class="list-inline">
@@ -104,10 +113,28 @@
                         <li><a target="_blank" href="{{.href}}">{{.title}}</a></li>
                     {{ end }}
                 </ul>
+-->
             </div>
+
+            <!--如果不需要显示相关文章则在md文件最顶部添加unrelated: true-->
+            {{ if not (.Params.unrelated) }}
+            <div class="
+            col-lg- col-lg-offset-2
+            col-md-10 col-md-offset-1
+            ">
+            <section>
+                <hr class="hidden-sm hidden-xs">
+                {{ partial "related.html" . }}
+            </section>
+            </div>
+            {{ end }}
+
+
         </div>
     </div>
 </article>
+
+
 
 {{ end }}
 
