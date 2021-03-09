@@ -7,23 +7,7 @@
     col-xs-12
     sidebar-container
 ">
-    <!-- Featured Tags -->
-    {{ if .Site.Params.featured_tags }}
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
-        <div class="tags">
-            {{ $featured_condition_size := .Site.Params.featured_condition_size }} 
-            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-               {{ if gt (len $taxonomy.Pages) $featured_condition_size }} 
-                    <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" title="{{ $name }}">
-                        {{ $name }}
-                    </a>
-               {{ end }} 
-            {{ end }}
-        </div>
-    </section>
-    {{ end }}
+   
 
     <!-- Short About -->
     <section class="visible-md visible-lg">
@@ -43,6 +27,16 @@
                        <span class="fa-stack fa-lg">
                            <i class="fa fa-circle fa-stack-2x"></i>
                            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               {{ end }}
+               {{ with .Site.Params.social.github }}
+               <li>
+                   <a target="_blank" href="{{ . }}">
+                       <span class="fa-stack fa-lg">
+                           <i class="fa fa-circle fa-stack-2x"></i>
+                           <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                        </span>
                    </a>
                </li>
@@ -97,16 +91,7 @@
                    </a>
                </li>
                {{ end }}
-               {{ with .Site.Params.social.github }}
-               <li>
-                   <a target="_blank" href="{{ . }}">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               {{ end }}
+              
                {{ with .Site.Params.social.linkedin }}
                <li>
                    <a target="_blank" href="{{ . }}">
@@ -120,6 +105,26 @@
                 </ul>
             </div>
     </section>
+
+     <!-- Featured Tags -->
+     {{ if .Site.Params.featured_tags }}
+     <section>
+         <hr class="hidden-sm hidden-xs">
+         <h5>FEATURED TAGS</h5>
+         <div class="tags">
+             {{ $featured_condition_size := .Site.Params.featured_condition_size }} 
+             {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                {{ if gt (len $taxonomy.Pages) $featured_condition_size }} 
+                     <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" title="{{ $name }}">
+                         {{ $name }}
+                     </a>
+                {{ end }} 
+             {{ end }}
+         </div>
+     </section>
+     {{ end }}
+
+
    <!-- Friends Blog -->
    <hr>
    <h5>FRIENDS</h5>
