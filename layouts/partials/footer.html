@@ -14,6 +14,16 @@
                        </a>
                    </li>
                    {{ end }}
+                    {{ with .Site.Params.social.github }}
+                    <li>
+                        <a target="_blank" href="{{ . }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                   {{ end }}
                     {{ with .Site.Params.social.email }}
                     <li>
                         <a href="mailto:{{ . }}">
@@ -77,16 +87,7 @@
                             </span>
                         </a>
                     </li>
-		    {{ end }}
-                    {{ with .Site.Params.social.github }}
-                    <li>
-                        <a target="_blank" href="{{ . }}">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
+		    
 		    {{ end }}
                     {{ with .Site.Params.social.linkedin }}
                     <li>
