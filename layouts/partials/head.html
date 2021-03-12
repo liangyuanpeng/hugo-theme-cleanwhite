@@ -16,6 +16,14 @@
     <meta name="keyword"  content="{{ .Site.Params.keyword }}">
     <link rel="shortcut icon" href="{{ "img/favicon.ico" | absURL }}">
 
+
+    <!--网站logo-->
+    {{- with .Params.share_img | default .Params.image | default .Site.Params.logo }}
+    <meta property="og:image" content="{{ . | absURL }}" />
+    <meta name="twitter:image" content="{{ . | absURL }}" />
+    {{- end }}
+
+
     <title>{{ if .Title }}{{ .Title }}-{{ .Site.Params.SEOTitle }}{{ else }}{{ .Site.Params.SEOTitle }}{{ end }}</title>
 
     <link rel="canonical" href="{{ .URL | absURL }}">
