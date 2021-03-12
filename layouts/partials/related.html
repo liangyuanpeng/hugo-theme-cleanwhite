@@ -1,0 +1,9 @@
+{{ $related := .Site.RegularPages.RelatedIndices . "tags"  | first 10 }}
+{{ with $related }}
+<h2>相关文章</h2>
+<ul style="margin-bottom: 25px;">
+    {{ range . }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+</ul>
+{{ end }}
