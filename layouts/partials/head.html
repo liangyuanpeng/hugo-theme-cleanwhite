@@ -8,13 +8,24 @@
     <!-- lyp baidu-site -->
     <meta name="baidu-site-verification" content="HGLXRsUXC4" />
 
+    <!-- liangyuanpeng.com-->
+    <meta name="baidu-site-verification" content="code-ANZvlnN0Xr" />
+
     {{ if .Params.description }}
     <meta name="description" content="{{ .Params.description }}">
     {{ else }}
     <meta name="description" content="{{ .Site.Params.description }}">
     {{ end }}
     <meta name="keyword"  content="{{ .Site.Params.keyword }}">
-    <link rel="shortcut icon" href="{{ "img/favicon.ico" | absURL }}">
+    <link rel="shortcut icon" href="{{ "img/logo.png" | absURL }}">
+
+
+    <!--网站logo-->
+    {{- with .Params.share_img | default .Params.image | default .Site.Params.logo }}
+    <meta property="og:image" content="{{ . | absURL }}" />
+    <meta name="twitter:image" content="{{ . | absURL }}" />
+    {{- end }}
+
 
     <title>{{ if .Title }}{{ .Title }}-{{ .Site.Params.SEOTitle }}{{ else }}{{ .Site.Params.SEOTitle }}{{ end }}</title>
 

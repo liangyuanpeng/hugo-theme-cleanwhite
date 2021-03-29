@@ -1,3 +1,4 @@
+
 {{ define "header" }}
 <!-- Post Header -->
 <style type="text/css">
@@ -19,7 +20,7 @@
                     </div>
                     <h1>{{ .Title }}</h1>
                     <h2 class="subheading">{{ .Params.subtitle }}</h2>
-                    <span  class="meta">Posted by {{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Title }}{{ end }} on {{ .Date.Format "Monday, January 2, 2006" }}
+                    <span  class="meta">Posted by {{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Title }}{{ end }} on {{ .Date.Format "2006-01-02" }}
                         {{ if .Site.Params.page_view_conter }}
                         <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
                             {{ partial "page_view_counter.html" .  }}
